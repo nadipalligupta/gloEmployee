@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
   login(eve, user,pass){
     eve.preventDefault();
-    if(user['value'] == "gupta" && pass['value'] == "password"){
+    if(user['value'] == "gupta" && pass['value'] == "global123"){
       console.log(user['value'],pass['value']);
       this.isValidate = true;
       this.router.navigate(['/allEmployee'])
