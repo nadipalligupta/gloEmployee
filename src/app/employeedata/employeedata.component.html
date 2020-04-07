@@ -30,7 +30,7 @@
     </div>
     <div id="skillset">
         <p><b>Skill-set: </b></p>
-        <span *ngFor = "let skill of skills">{{skill}}<span *ngIf = skill>, </span> </span>
+        <span *ngFor = "let skill of skills; let isLast=last">{{skill}}{{isLast ? '' : ', '}}</span>
         <input type = "text" #addInp [style.display] = "displayskill">
         <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color skilladd edit" aria-hidden="true" (click) = "add()">add</mat-icon>
         <img class = "img2"  src="../../assets/images/tech.png">
