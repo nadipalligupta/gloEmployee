@@ -1,0 +1,94 @@
+table {
+  width: 100%;
+}
+.inpmar{
+  margin-bottom: 6px;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+.mat-row:hover {
+  background-color: rgba(232, 230, 225, 0.9);
+}
+.example-form-field{
+  width:50%;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.delete{
+  cursor: pointer;
+}
+
+#example-card {
+  max-width: 200px;
+  position: absolute;
+  box-shadow: 5px 10px #888888;
+  left:19%;
+  border:1px solid #000;
+ 
+}
+.mat-card-image{
+  width:80%;
+  display: inline-block;
+  
+}
+.mat-card{
+  padding:5px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.nameImg{
+  border-radius: 15px;
+  background-color: red;
+  margin-right: 5px;
+  padding:6px 14px;
+}
+
+.tooltipX{
+  position: relative;
+  cursor: pointer;
+	
+}
+.tooltiptextY{
+  visibility: hidden;
+  position: absolute;
+  top:-35px;
+  left: 100px;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  text-align: right;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.tooltipX:hover .tooltiptextY {
+  visibility: visible;
+}
+
+.tooltiptextY:after, .tooltiptextY:before {
+	right: 100%;
+	top: 48%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.tooltiptextY:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #000;
+  border-width: 25px;
+  margin-top: -19px;
+}
+
+

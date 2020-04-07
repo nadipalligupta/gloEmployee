@@ -1,0 +1,91 @@
+<div style="background-color: whitesmoke;padding: 10px;">
+<mat-card id="contact">
+    <div style="width: 50%;float:right;text-align: right;">
+        <p [style.display]="displayData">LDAP: {{userData.ldap}}</p>
+        <div [style.display]="displayInp" class="inpmar">LDAP: <input type="text" [value] = userData.ldap #ldap></div>
+        <p [style.display]="displayData">Google Mail: <a href="#">{{userData.mail.gemail}}</a></p>
+        <div [style.display]="displayInp" class="inpmar">Google Mail: <input type="text" value = {{userData.mail.gemail}} #gemail></div>
+    </div>
+    <div style="width: 50%;">
+        <p [style.display]="displayData">Phone: {{userData.contactinfo.phone}}</p>
+        <div [style.display]="displayInp" class="inpmar">Phone: <input type="text" [value] = userData.contactinfo.phone #phone></div>
+        <p [style.display]="displayData">Glo Mail: <a href="#">{{userData.mail.gloemail}}</a></p>
+        <div [style.display]="displayInp" class="inpmar">Glo Mail: <input type="text" value = {{userData.mail.gloemail}} #gloemail></div>
+        <p [style.display]="displayData">Seat No: {{userData.seatno}}</p>
+        <div [style.display]="displayInp" class="inpmar">Seat No: <input type="text" value = {{userData.seatno}} #seatno></div>
+        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color contactedit edit" aria-hidden="true" (click) = "edit()" *ngIf = "ediT">open_in_new</mat-icon>
+    </div>
+    <img src="../../assets/images/gupta.jpg">
+</mat-card>
+
+
+<mat-card id = "tech">
+    <div id="projects">
+        <p><b>Projects: </b></p>
+        <p *ngFor = "let project of projects" [style.display]="displayproData"><u>{{project}}</u></p>
+        <div [style.display]="displayproInp" *ngFor = "let project of projects" class="inpmar"><input type="text" value = {{project}} #project></div>
+        <p>Project Discription...</p>
+        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color proedit edit" aria-hidden="true" (click) = "proedit()" *ngIf = "proediT">open_in_new</mat-icon>
+        <img class = "img1" src="../../assets/images/tech.png">
+    </div>
+    <div id="skillset">
+        <p><b>Skill-set: </b></p>
+        <span *ngFor = "let skill of skills">{{skill}}<span *ngIf = skill>, </span> </span>
+        <input type = "text" #addInp [style.display] = "displayskill">
+        <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color skilladd edit" aria-hidden="true" (click) = "add()">add</mat-icon>
+        <img class = "img2"  src="../../assets/images/tech.png">
+    </div>
+</mat-card>
+
+<div class = "address">
+    <mat-card id = 'perm'>
+
+        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color permedit edit" aria-hidden="true" (click) = "permedit()" *ngIf = "perediT">open_in_new</mat-icon>
+
+        <p><b><u>Permanent :</u></b></p>
+
+        <p [style.display]="dispermDt">Door No: {{userData.contactinfo.address.residential.houseno}}</p>
+        <div [style.display]="dispermInp" class="inpmar">Door No: <input type="text" value= {{userData.contactinfo.address.permanent.houseno}} #phouseno></div>
+        <p [style.display]="dispermDt">Landmark: {{userData.contactinfo.address.permanent.landmark}}</p>
+        <div [style.display]="dispermInp" class="inpmar">Landmark: <input type="text" value= {{userData.contactinfo.address.permanent.landmark}} #plandmark></div>
+        <p [style.display]="dispermDt">Street: {{userData.contactinfo.address.permanent.area}}</p>
+        <div [style.display]="dispermInp" class="inpmar">Street: <input type="text" value= {{userData.contactinfo.address.permanent.area}} #parea></div>
+        <p [style.display]="dispermDt">Pin-Code: {{userData.contactinfo.address.permanent.pin}}</p>
+        <div [style.display]="dispermInp" class="inpmar">Pin-Code: <input type="text" value= {{userData.contactinfo.address.permanent.pin}} #ppin></div>
+        <p [style.display]="dispermDt">City: {{userData.contactinfo.address.permanent.location}}</p>
+        <div [style.display]="dispermInp" class="inpmar">City: <input type="text" value= {{userData.contactinfo.address.permanent.location}} #plocation></div>
+        <p [style.display]="dispermDt">Zilla: {{userData.contactinfo.address.permanent.zilla}}</p>
+        <div [style.display]="dispermInp" class="inpmar">Zilla: <input type="text" value= {{userData.contactinfo.address.permanent.zilla}} #pzilla></div>
+        <p [style.display]="dispermDt">State: {{userData.contactinfo.address.permanent.state}}</p>
+        <div [style.display]="dispermInp" class="inpmar">State: <input type="text" value= {{userData.contactinfo.address.permanent.state}} #pstate></div>
+        <img class = "img1" src="../../assets/images/map.png">
+    </mat-card>
+
+    <mat-card id = 'resd'>
+
+        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color resdedit edit" aria-hidden="true" (click) = "resdedit()" *ngIf = "resediT">open_in_new</mat-icon>
+
+        <p><b><u>Residentail:</u></b></p>
+
+        <p [style.display]="disresDt">Door No: {{userData.contactinfo.address.residential.houseno}}</p>
+        <div [style.display]="disresInp" class="inpmar">Door No: <input type="text" value= {{userData.contactinfo.address.residential.houseno}} #rhouseno></div>
+        <p [style.display]="disresDt">Landmark: {{userData.contactinfo.address.residential.landmark}}</p>
+        <div [style.display]="disresInp" class="inpmar">Landmark: <input type="text" value= {{userData.contactinfo.address.residential.landmark}} #rlandmark></div>
+        <p [style.display]="disresDt">Street: {{userData.contactinfo.address.residential.area}}</p>
+        <div [style.display]="disresInp" class="inpmar">Street: <input type="text" value= {{userData.contactinfo.address.residential.area}} #rarea></div>
+        <p [style.display]="disresDt">Pin-Code: {{userData.contactinfo.address.residential.pin}}</p>
+        <div [style.display]="disresInp" class="inpmar">Pin-Code: <input type="text" value= {{userData.contactinfo.address.residential.pin}} #rpin></div>
+        <p [style.display]="disresDt">City: {{userData.contactinfo.address.residential.location}}</p>
+        <div [style.display]="disresInp" class="inpmar">City: <input type="text" value= {{userData.contactinfo.address.residential.location}} #rlocation></div>
+        <p [style.display]="disresDt">Zilla: {{userData.contactinfo.address.residential.zilla}}</p>
+        <div [style.display]="disresInp" class="inpmar">Zilla: <input type="text" value= {{userData.contactinfo.address.residential.zilla}} #rzilla></div>
+        <p [style.display]="disresDt">State: {{userData.contactinfo.address.residential.state}}</p>
+        <div [style.display]="disresInp" class="inpmar">State: <input type="text" value= {{userData.contactinfo.address.residential.state}} #rstate></div>
+        <img class = "img2" src="../../assets/images/map.png">
+
+    </mat-card>
+    
+</div>
+<button mat-raised-button color="primary" (click) = "submit(ldap.value, gemail.value, phone.value, gloemail.value,seatno.value, rhouseno.value, rlandmark.value, rarea.value, rpin.value, rlocation.value, rzilla.value, rstate.value, phouseno.value, plandmark.value, parea.value, ppin.value, plocation.value, pzilla.value, pstate.value, addInp.value)">Submit</button>
+</div>
+

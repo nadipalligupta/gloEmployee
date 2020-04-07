@@ -1,0 +1,312 @@
+[{
+    "name":"Gupta",
+    "id" : "325932",
+    "skillset": ["HTML", "Angular", "Javascript","CSS","AngularMaterials"],
+    "projects":["CPI - Onboarding", "Medusa"],
+    "peojectinfo":["descip1", "descip2"],
+    "previosprojects":["nominations"],
+    "ldap":"cnadipalli",
+    "seatno": "A3245",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Abhay Gupta",
+    "mail":{
+        "gemail":"cnadipalli@google.com",
+        "gloemail":"nadipalli.gupta@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":"9059975210",
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+},
+{
+    "name":"Viswa",
+    "id" : "325956",
+    "skillset":["HTML", "Angular", "Javascript","CSS", "Java"],
+    "projects":["Nominations"],
+    "peojectinfo":["descip1"],
+    "previosprojects":["nominations"],
+    "ldap":"viswareddy",
+    "seatno": "B9245",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Lalli",
+    "mail":{
+        "gemail":"viswa@google.com",
+        "gloemail":"viswa@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":9493698921,
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+},
+{
+    "name":"Murali",
+    "id" : "325921",
+    "skillset":["Boot","Spring","Java"],
+    "projects":["clerk"],
+    "peojectinfo":["descip1", "descip2"],
+    "previosprojects":["nominations"],
+    "ldap":"muralim",
+    "seatno": "C3905",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Abhay Gupta",
+    "mail":{
+        "gemail":"cnadipalli@google.com",
+        "gloemail":"nadipalli.gupta@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":9493698921,
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+},
+{
+    "name":"Rajsekhar",
+    "id" : "325942",
+    "skillset":["Java", "Javascript", "CSS"],
+    "projects":["Onboarding", "Alkali"],
+    "peojectinfo":["descip1", "descip2"],
+    "previosprojects":["nominations"],
+    "ldap":"sekharraj",
+    "seatno": "D0945",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Abhay Gupta",
+    "mail":{
+        "gemail":"cnadipalli@google.com",
+        "gloemail":"nadipalli.gupta@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":9493698921,
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+},
+{
+    "name":"Praveen",
+    "id" : "325910",
+    "skillset":["HTML", "Angular", "Java","CSS"],
+    "projects":["CPI - Onboarding", "Medusa"],
+    "peojectinfo":["descip1", "descip2"],
+    "previosprojects":["Alkali", "Clerk"],
+    "ldap":"praveenb",
+    "seatno": "E7845",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Abhay Gupta",
+    "mail":{
+        "gemail":"cnadipalli@google.com",
+        "gloemail":"nadipalli.gupta@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":9493698921,
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+},
+{
+    "name":"Vyshnavi",
+    "id" : "325909",
+    "skillset":["HTML", "Angular", "Spring", "Boot"],
+    "projects":["Medusa", "Cloud"],
+    "peojectinfo":["descip1", "descip2"],
+    "previosprojects":["nominations"],
+    "ldap":"vyshnavim",
+    "seatno": "F5645",
+    "manager":{
+        "reportmanager":"santosh",
+        "locationhead":"santosh"
+    },
+    "teamlead":"Abhay Gupta",
+    "mail":{
+        "gemail":"cnadipalli@google.com",
+        "gloemail":"nadipalli.gupta@globallogic.com"
+    },
+    "education":{
+        "postgraduation":{
+            "type":"MTech",
+            "stream":"Computers"
+        },
+        "graduation":{
+            "type":"BTech",
+            "stream":"Mechanical"
+        }
+    },
+    "contactinfo":{
+        "phone":9493698921,
+        "address":{
+            "residential":{
+                "houseno":"89/985/A15",
+                "landmark":"Hanumanthrao Function Hall",
+                "area": "Yousufguda",
+                "pin":"500045",
+                "location":"Hyderabad",
+                "zilla":"Rangareddy",
+                "state":"Telangana"
+            },
+            "permanent":{
+                "houseno":"8-235",
+                "landmark":"Ramalayam",
+                "area": "Velampet",
+                "pin":"533406",
+                "location":"Annavaram",
+                "zilla":"East-Godavari",
+                "state":"Andhra Pradesh"
+            }
+        }
+    }
+}]

@@ -1,0 +1,40 @@
+<div class='bgImg'><div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h2 id = "title">Globallogic</h2>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username" #userName>
+					</div>  
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password" #passWord>
+					</div>
+					<div class="form-group">
+						<input type = 'radio'><span style="color: white"> Manager</span>
+						<input type = "radio" style="margin-left: 10px;"><span style="color: white" checked="checked"> Admin</span>
+						<input type="submit" value="Login" class="btn float-right login_btn" (click) = 'login($event,userName, passWord)'>
+						<div *ngIf="!isValidate" style="color: red;">*Please enter valid details</div>
+
+					</div>
+					
+				</form>
+				
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center">
+					<a href="#">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
