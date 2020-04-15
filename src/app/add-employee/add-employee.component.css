@@ -1,0 +1,27 @@
+.mat-chip.mat-standard-chip {
+    background-color: #ffffff;
+    color: rgba(0,0,0,.87);
+    border-radius: 20px;
+    padding: 0px 0px;
+    display: inline-block;
+    margin-right: 5px;
+    padding-left: 10px;
+}
+.removechip{
+    cursor: pointer;
+}
+.arrayelem{
+    width: 84%;
+    margin-bottom: 10px;
+    display: inline;
+    margin-right: 18px;
+}
+.statemeasur{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.jumbotron{
+    border-radius: 0px;
+    margin-bottom: 0px;
+}

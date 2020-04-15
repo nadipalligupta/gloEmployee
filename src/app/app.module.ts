@@ -11,13 +11,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {EmployeeDataService} from './employee-data.service';
 import { FormsModule } from '@angular/forms';
 import { EmployeedataComponent } from './employeedata/employeedata.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllEmployeeComponent,
     LoginComponent,
-    EmployeedataComponent
+    EmployeedataComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { EmployeedataComponent } from './employeedata/employeedata.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EmployeeDataService],
   bootstrap: [AppComponent]

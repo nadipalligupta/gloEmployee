@@ -4,7 +4,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {EmployeeDataService} from '../employee-data.service';
 import {Router} from '@angular/router';
-import { element } from 'protractor';
+
 
 
 
@@ -44,15 +44,14 @@ export class AllEmployeeComponent implements OnInit {
   ngOnInit() {
   
   }
-  // applyFilter(event: Event) {
-  //   this.filterValue = (event.target as HTMLInputElement).value;
-  //   //console.log(this.filterValue);
-  //   this.dataSource.filter = this.filterValue.trim().toLowerCase();
-  // }
+  addEmp(eve){
+    eve.stopPropagation();
+    this._router.navigate(['/addEmployee']);
+  }
+
   search(ele: Element){
     var searchVal = ele['value'];
     console.log(searchVal);
-    //this.newArray = this.users.map(a => ({...a}));
     console.log(this.users);
     this.elements = this.users.filter(function(hero) {
         return (hero.name.trim().toLowerCase().includes(searchVal)) || (hero.id.includes(searchVal))
