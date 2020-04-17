@@ -16,12 +16,18 @@
     display: inline;
     margin-right: 18px;
 }
-.statemeasur{
+.countrymeasur{
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
+    margin: auto;
 }
 .jumbotron{
     border-radius: 0px;
     margin-bottom: 0px;
 }
+
+.disableAddr{
+    margin-left: 10px;
+}
+                     

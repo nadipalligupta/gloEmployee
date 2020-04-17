@@ -27,6 +27,7 @@ export class AllEmployeeComponent implements OnInit {
   dynamicBox:any;
   elem: HTMLElement;
   elements:any;
+  
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 

@@ -15,7 +15,8 @@ export class AddEmployeeComponent implements OnInit {
     removable = true;
     skills:any;
     project:any;
-    prevproject:any;
+    addressChange:boolean = false;
+    assets:any;
     bloods: any = ["A+", "B+", "O+", "AB+","A-", "B-", "O-", "AB-", "others"]
 
     constructor(private formBuilder: FormBuilder,  private _router: Router) { }
@@ -26,48 +27,64 @@ export class AddEmployeeComponent implements OnInit {
             id: ['', Validators.required],
             ldap: ['', Validators.required],
             seatno: ['', Validators.required],
-            assetid: ['', Validators.required],
             vendi: ['', Validators.required],
             bloodgroup: ['', Validators.required],
             skillset: this.formBuilder.array([]),
             projects: this.formBuilder.array([]),
-            previousprojects: this.formBuilder.array([]),
+            assets: this.formBuilder.array([]),
             teamlead: ['', Validators.required],
             managers: this.formBuilder.group({
               manager: ['', Validators.required],
-              areahead: ['', Validators.required]
+              director: ['', Validators.required]
             }),
             mail: this.formBuilder.group({
-              gemail: ['', Validators.required],
-              gloemail: ['', Validators.required]
+              googlemail: ['', Validators.required],
+              glmail: ['', Validators.required]
             }),
             contactinfo: this.formBuilder.group({
               phone: ['', Validators.required],
               emergencyphone: ['', Validators.required],
               address: this.formBuilder.group({
                 residential: this.formBuilder.group({
-                  houseno: ['', Validators.required],
-                  landmark: ['', Validators.required],
-                  area: ['', Validators.required],
-                  pin: ['', Validators.required],
-                  location: ['', Validators.required],
-                  zilla: ['', Validators.required],
+                  addressline1: ['', Validators.required],
+                  addressline2: ['', Validators.required],
+                  city: ['', Validators.required],
+                  zipcode: ['', Validators.required],
+                  district: ['', Validators.required],
                   state: ['', Validators.required],
+                  country: ['', Validators.required]
                 }),
                 permanent: this.formBuilder.group({
-                  houseno: ['', Validators.required],
-                  landmark: ['', Validators.required],
-                  area: ['', Validators.required],
-                  pin: ['', Validators.required],
-                  location: ['', Validators.required],
-                  zilla: ['', Validators.required],
+                  addressline1: ['', Validators.required],
+                  addressline2: ['', Validators.required],
+                  city: ['', Validators.required],
+                  zipcode: ['', Validators.required],
+                  district: ['', Validators.required],
                   state: ['', Validators.required],
+                  country: ['', Validators.required]
                 }),
 
               })
             })
 
         })
+    }
+
+    //adding assets
+    get assetArray(){
+      return this.addEmpForm.get('assets') as FormArray;
+    }
+   
+    addAssets(id,type){
+      if(id['value'] && type['value'] !== ""){
+      this.assetArray.push(this.formBuilder.group({
+        assetid: id['value'],
+        assettype: type['value']
+      }));
+      console.log(this.assetArray.value);
+      id['value'] = "";
+      type['value'] = "";
+      }
     }
 
     // adding skills
@@ -118,35 +135,21 @@ export class AddEmployeeComponent implements OnInit {
       }
     }
 
-    //adding previous project
-    addPrevProject(event, prevproject) {
-      event.stopPropagation();
-      event.preventDefault();
-      if(prevproject['value'] !==  " "){
-      this.prevproject = this.addEmpForm.controls.previousprojects as FormArray;
-      this.prevproject.push(new FormControl(prevproject['value']));
-      console.log(this.prevproject.value);
-      }
-      prevproject['value'] = " ";
-    }
-
-    //remove previous project
-    removePrevProject(prevproject): void {
-      const index = this.addEmpForm.value.previousprojects.indexOf(prevproject);
-  
-      if (index >= 0) {
-        this.addEmpForm.value.previousprojects.splice(index, 1);
-        console.log(this.prevproject.value);
-        
-      }
-    }
-
+    // Blood Group
     changeBlood(eve){
       this.bloodgroup.setValue(eve.target.value)
     }
-
     get bloodgroup() {
       return this.addEmpForm.get('bloodgroup');
+    }
+
+    changeAddress(eve){
+      if(eve.target.checked){
+        this.addressChange = true;
+      }
+      else{
+        this.addressChange = false;
+      }
     }
   
     // convenience getter for easy access to form fields

@@ -11,77 +11,65 @@
                     <!-- Full Name -->
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <input type="text" formControlName="firstName" class="form-control"/>
                         <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                            <div *ngIf="f.firstName.errors.required">Full Name is required</div>
                         </div>
                     </div>
 
                     <!-- ID Number -->
                     <div class="form-group">
-                        <label>ID Number</label>
-                        <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
-                        <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
-                            <div *ngIf="f.id.errors.required">ID is required</div>
-                        </div>
+                        <label>ID</label>
+                        <input type="text" formControlName="id" class="form-control"/>
                     </div>
 
-                    <!-- Emais -->
+                    <!-- Emails -->
                     <div class="form-group" formGroupName="mail">
                         <label>Google Mail</label>
-                        <input type="text" formControlName="gemail" class="form-control" ><br>
-                        <label>Glo Mail</label>
-                        <input type="text" formControlName="gloemail" class="form-control" >                        
+                        <input type="text" formControlName="googlemail" class="form-control" ><br>
+                        <label>GL Mail</label>
+                        <input type="text" formControlName="glmail" class="form-control" >                        
                     </div>
 
                     <!-- ldap-->
                     <div class="form-group">
                         <label>LDAP</label>
-                        <input type="text" formControlName="ldap" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ldap.errors }" />
-                        <div *ngIf="submitted && f.ldap.errors" class="invalid-feedback">
-                            <div *ngIf="f.ldap.errors.required">Ldap is required</div>
-                        </div>
+                        <input type="text" formControlName="ldap" class="form-control"/>
                     </div>
 
                     <!-- seat no-->
                     <div class="form-group">
                         <label>Seat Number</label>
-                        <input type="text" formControlName="seatno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.seatno.errors }" />
-                        <div *ngIf="submitted && f.seatno.errors" class="invalid-feedback">
-                            <div *ngIf="f.seatno.errors.required">Seat Number is required</div>
-                        </div>
+                        <input type="text" formControlName="seatno" class="form-control"/>
                     </div>
 
-                    <!-- Asset Id -->
-                    <div class="form-group">
-                        <label>Asset ID</label>
-                        <input type="text" formControlName="assetid" class="form-control" >
+                    <!-- Assets -->
+                    <div class="form-group" formArrayName = "assets">
+                        <p>Asset Type</p>
+                        <input type="text" class="form-control assets" #assettype style="margin-bottom: 10px;">
+                        <p>Asset Id</p>
+                        <input type="text" class="form-control assets" #assetid style="margin-bottom: 10px;">
+                        
+                        <button (click)="addAssets(assettype, assetid)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;">Add</button>
                     </div>
 
                     <!-- Teamlead -->
                     <div class="form-group">
                         <label>Team Lead</label>
-                        <input type="text" formControlName="teamlead" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.teamlead.errors }" />
-                        <div *ngIf="submitted && f.teamlead.errors" class="invalid-feedback">
-                            <div *ngIf="f.teamlead.errors.required">Team Lead name is required</div>
-                        </div>
+                        <input type="text" formControlName="teamlead" class="form-control"/>
                     </div>
 
                     <!-- Managers -->
                     <div class="form-group" formGroupName="managers">
                         <label>Manager</label>
                         <input type="text" formControlName="manager" class="form-control" ><br>
-                        <label>Area Head</label>
-                        <input type="text" formControlName="areahead" class="form-control" >                        
+                        <label>Director</label>
+                        <input type="text" formControlName="director" class="form-control" >                        
                     </div>
 
                     <!-- vendi card -->
                     <div class="form-group">
                         <label>Vendiman Card</label>
-                        <input type="text" formControlName="vendi" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.vendi.errors }" />
-                        <div *ngIf="submitted && f.vendi.errors" class="invalid-feedback">
-                            <div *ngIf="f.vendi.errors.required">Vendiman Card Number is required</div>
-                        </div>
+                        <input type="text" formControlName="vendi" class="form-control"/>
                     </div>
 
                     <!-- contact number -->
@@ -116,16 +104,6 @@
                         </mat-chip>
                     </div>
 
-                    <!-- previous projects handled -->
-                    <div class="form-group">
-                        <p>Previous Projects</p>
-                        <input type="text" class="form-control arrayelem" #prevproject style="margin-bottom: 10px;">
-                        <button (click)="addPrevProject($event, prevproject)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;">Add</button>
-
-                        <mat-chip *ngFor="let prevproject of addEmpForm.value.previousprojects" [selectable]="selectable"[removable]="removable" (removed)="removePrevProject(prevproject)">{{prevproject}}
-                        <mat-icon matChipRemove *ngIf="removable" class="removechip">cancel</mat-icon>
-                        </mat-chip>
-                    </div>
 
                     <!-- skillset -->
                     <div class="form-group">
@@ -144,63 +122,68 @@
                     <!-- Address -->
                     <div class="form-group" formGroupName="contactinfo">
                         <span formGroupName="address">
+                            <div style="margin-top: 30px;text-align: center;">
+                        <input type="checkbox" data-md-icheck (change)="changeAddress($event)"/> <span class="disableAddr">Residential & Permanent Address are different</span>
+                    </div>  
 
                             <!-- Residential Address -->
-                        <p style="text-align: center;margin-top: 25px;"><b>Residential Address</b></p>
+                        <p style="text-align: center;margin-top: 15px;"><b>Residential Address</b></p>
                          <div class="row" formGroupName="residential">
                             <div class="col-md-6">
-                                <label>House No.</label>
-                                <input type="text" formControlName="houseno" class="form-control" ><br>
-                                <label>Landmark</label>
-                                <input type="text" formControlName="landmark" class="form-control"><br>
-                                <label>Area</label>
-                                <input type="text" formControlName="area" class="form-control">
+                                <label>Address Line - 1</label>
+                                <input type="text" formControlName="addressline1" class="form-control" ><br>
+                                <label>Address Line - 2</label>
+                                <input type="text" formControlName="addressline2" class="form-control"><br>
+                                <label>City</label>
+                                <input type="text" formControlName="city" class="form-control">
                             </div>
                             <div class="col-md-6">
-                                <label>Pin</label>
-                                <input type="text" formControlName="pin" class="form-control" ><br>
-                                <label>Location</label>
-                                <input type="text" formControlName="location" class="form-control"><br>
-                                <label>Zilla</label>
-                                <input type="text" formControlName="zilla" class="form-control">
-                            </div>
-                            <div class="statemeasur">
+                                <label>Zip-Code</label>
+                                <input type="text" formControlName="zipcode" class="form-control" ><br>
+                                <label>District</label>
+                                <input type="text" formControlName="district" class="form-control"><br>
                                 <label>State</label>
                                 <input type="text" formControlName="state" class="form-control">
+                            </div>
+                            <div class="countrymeasur">
+                                <label>Country</label>
+                                <input type="text" formControlName="country" class="form-control">
                             </div>
                          </div>   
 
                              <!-- Permanent Address -->
+                        <span *ngIf = "addressChange">     
                         <p style="text-align: center;margin-top: 25px;"><b>Permanent Address</b></p>
                         <div class="row" formGroupName="permanent">
                            <div class="col-md-6">
-                               <label>House No.</label>
-                               <input type="text" formControlName="houseno" class="form-control" ><br>
-                               <label>Landmark</label>
-                               <input type="text" formControlName="landmark" class="form-control"><br>
-                               <label>Area</label>
-                               <input type="text" formControlName="area" class="form-control">
+                               <label>Address Line - 1</label>
+                               <input type="text" formControlName="addressline1" class="form-control" ><br>
+                               <label>Address Line - 2</label>
+                               <input type="text" formControlName="addressline2" class="form-control"><br>
+                               <label>City</label>
+                               <input type="text" formControlName="city" class="form-control">
                            </div>
                            <div class="col-md-6">
-                               <label>Pin</label>
-                               <input type="text" formControlName="pin" class="form-control" ><br>
-                               <label>Location</label>
-                               <input type="text" formControlName="location" class="form-control"><br>
-                               <label>Zilla</label>
-                               <input type="text" formControlName="zilla" class="form-control">
-                           </div>
-                           <div class="statemeasur">
+                               <label>Zip-Code</label>
+                               <input type="text" formControlName="zipcode" class="form-control" ><br>
+                               <label>District</label>
+                               <input type="text" formControlName="district" class="form-control"><br>
                                <label>State</label>
                                <input type="text" formControlName="state" class="form-control">
                            </div>
+                           <div class="countrymeasur">
+                               <label>Country</label>
+                               <input type="text" formControlName="country" class="form-control">
+                           </div>
                         </div>  
+                        </span>
                         </span>
                     </div>
                      
                 </div>
             
             <div class="form-group" style="margin: auto;">
-                <button mat-raised-button color="primary">Submit</button>
+                <button mat-raised-button color="primary" >Submit</button>
             </div>
             </div>
                 </form>
