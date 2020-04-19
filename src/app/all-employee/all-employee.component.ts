@@ -18,7 +18,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./all-employee.component.css']
 })
 export class AllEmployeeComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'skillset', 'projects', 'clear'];
+  displayedColumns: string[] = ['id', 'name', 'asset', 'skillset', 'projects', 'clear'];
   dataSource: MatTableDataSource<any>;
   users:any;
   value = '';
