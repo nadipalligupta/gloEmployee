@@ -9,6 +9,12 @@ table {
   width: 100%;
 }
 
+.fab-icon {
+  bottom: 50px;
+  right: 50px;
+  position: fixed;
+}
+
 td, th {
   width: 25%;
 }

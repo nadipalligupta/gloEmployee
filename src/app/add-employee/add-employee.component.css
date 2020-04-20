@@ -1,5 +1,5 @@
 .mat-chip.mat-standard-chip {
-    background-color: #ffffff;
+    background-color: #ff0000;
     color: rgba(0,0,0,.87);
     border-radius: 20px;
     padding: 0px 0px;
@@ -30,4 +30,12 @@
 .disableAddr{
     margin-left: 10px;
 }
-                     
+
+.dialogdata{
+  max-height: 550px;
+  max-width: 650px;
+}
+
+mat-form-field {
+  padding-right: 15px;
+}

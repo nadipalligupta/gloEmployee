@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div style="background-color: whitesmoke;height: 100%;">
 <mat-form-field class="example-form-field">
   <mat-label>Search</mat-label>
@@ -6,7 +7,6 @@
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
-<button mat-raised-button color="primary" style="margin-left: 20px;" (click) = "addEmp($event)"><b>+</b> Employee</button>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;">
@@ -62,6 +62,7 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
 </div>
+<button mat-fab color="primary" class="fab-icon" (click)="addEmp()">+</button>
 
 
 

@@ -4,10 +4,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {EmployeeDataService} from '../employee-data.service';
 import {Router} from '@angular/router';
-
-
-
-
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
+import { MatDialog } from '@angular/material/dialog';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -27,27 +25,34 @@ export class AllEmployeeComponent implements OnInit {
   dynamicBox:any;
   elem: HTMLElement;
   elements:any;
+  isDataLoading= false;
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private empServ: EmployeeDataService, private _router: Router,private elRef:ElementRef) {
-    // Create 100 users
-    
-    this.empServ.getData().subscribe(res=>{
+  constructor(private empServ: EmployeeDataService, private _router: Router,private elRef:ElementRef,public dialog: MatDialog) {
+  }
+  ngOnInit() {
+    this.getEmployees();
+  }
+
+  getEmployees(){
+    this.empServ.getData().subscribe(res => {
       this.users = res;
-      //console.log(this.users);
       this.dataSource = new MatTableDataSource(this.users);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    })
+    });
   }
-  ngOnInit() {
-  
-  }
-  addEmp(eve){
-    eve.stopPropagation();
-    this._router.navigate(['/addEmployee']);
+  addEmp(){
+    //this._router.navigate(['/addEmployee']);
+      const dialogRef = this.dialog.open(AddEmployeeComponent);
+      dialogRef.afterClosed().subscribe(data => {
+        if( data){
+          this.isDataLoading = true;
+          this.empServ.createEmployee(data).subscribe(data => this.getEmployees());
+        }
+      });
   }
 
   search(ele: Element){

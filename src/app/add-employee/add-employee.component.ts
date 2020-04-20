@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
-
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from '@angular/material/dialog';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -19,7 +23,8 @@ export class AddEmployeeComponent implements OnInit {
     assets:any;
     bloods: any = ["A+", "B+", "O+", "AB+","A-", "B-", "O-", "AB-", "others"]
 
-    constructor(private formBuilder: FormBuilder,  private _router: Router) { }
+    constructor(private formBuilder: FormBuilder,  private _router: Router, public dialogRef: MatDialogRef<AddEmployeeComponent>,
+                @Inject(MAT_DIALOG_DATA) public data: any,) { }
 
     ngOnInit() {
         this.addEmpForm = this.formBuilder.group({

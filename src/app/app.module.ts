@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { EmployeedataComponent } from './employeedata/employeedata.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AllEmployeeComponent,
     LoginComponent,
     EmployeedataComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
