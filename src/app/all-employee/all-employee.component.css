@@ -61,7 +61,6 @@ td, th {
 .tooltipX{
   position: relative;
   cursor: pointer;
-	
 }
 .tooltiptextY{
   visibility: hidden;
@@ -95,6 +94,11 @@ td, th {
 	border-right-color: #000;
   border-width: 25px;
   margin-top: -19px;
+}
+
+.tooltipAsset{
+  position: relative;
+  cursor: pointer;
 }
 
 

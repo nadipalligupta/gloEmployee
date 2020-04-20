@@ -37,6 +37,25 @@
 
     </ng-container>
 
+    <!-- Assets -->
+    <ng-container matColumnDef="asset">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset Id's </th>
+      <td mat-cell *matCellDef="let row">
+       <span *ngFor = 'let asset of row.assets;' class="tooltipX">{{asset.laptop}} {{asset.desktop1}} {{asset.desktop2}}
+          
+       
+        <div class="tooltiptextY">
+          <span style="width: 30%;color: violet;"></span>
+          <span style="width: 60%;">
+            <div><b>{{asset | json}}</b></div>
+          </span>
+        </div>
+      </span>
+      
+      </td>
+
+    </ng-container>
+
     <!-- Skillset Column -->
     <ng-container matColumnDef="skillset">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Skillset </th>
