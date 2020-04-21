@@ -55,6 +55,11 @@ export class AllEmployeeComponent implements OnInit {
       });
   }
 
+getAssets(asset){
+console.log(asset)
+if(asset.laptop && asset.desktop1 && asset.desktop2)
+  return asset.laptop+","+asset.desktop1+","+asset.desktop2;
+}
   search(ele: Element){
     var searchVal = ele['value'];
     console.log(searchVal);
