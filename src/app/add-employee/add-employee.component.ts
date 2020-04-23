@@ -15,8 +15,10 @@ export class AddEmployeeComponent implements OnInit {
     removable = true;
     skills:any;
     project:any;
-    addressChange:boolean = false;
+    addressChange:boolean = true;
     assets:any;
+    assetData:boolean = false;
+    assetItems:any = ['Laptop', 'Desktop1', 'Desktop2'];
     bloods: any = ["A+", "B+", "O+", "AB+","A-", "B-", "O-", "AB-", "others"]
 
     constructor(private formBuilder: FormBuilder,  private _router: Router) { }
@@ -75,17 +77,25 @@ export class AddEmployeeComponent implements OnInit {
       return this.addEmpForm.get('assets') as FormArray;
     }
    
-    addAssets(id,type){
-      if(id['value'] && type['value'] !== ""){
+    addAssets(id){
+      var type = document.getElementById("selected");
+      console.log(type['value']);
+      if(id['value'] !== ""){
       this.assetArray.push(this.formBuilder.group({
         assetid: id['value'],
         assettype: type['value']
       }));
       console.log(this.assetArray.value);
+      this.assetItems = this.assetItems.filter(function(ele){
+        return (type['value'] != ele)
+      })
+      if(this.assetItems.length < 1){
+          this.assetData = true;
+      }
       id['value'] = "";
-      type['value'] = "";
       }
     }
+
 
     // adding skills
     addSkill(event, skill) {
@@ -151,6 +161,7 @@ export class AddEmployeeComponent implements OnInit {
         this.addressChange = false;
       }
     }
+
   
     // convenience getter for easy access to form fields
     get f() { return this.addEmpForm.controls; }
@@ -166,8 +177,7 @@ export class AddEmployeeComponent implements OnInit {
 
         console.log(JSON.stringify(this.addEmpForm.value));
         this.addEmpForm.reset();
-        
-        
+        this.assetItems = ['Laptop', 'Desktop1', 'Desktop2'];
     }
 }
 

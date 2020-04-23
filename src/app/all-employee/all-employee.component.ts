@@ -74,6 +74,9 @@ export class AllEmployeeComponent implements OnInit {
     this.value = '';
     this.dataSource = this.users;
   }
+  onTableScroll(eve){
+    console.log("khbasefjbejkfbjkb");
+  }
 }
 
 

@@ -43,13 +43,30 @@
                     </div>
 
                     <!-- Assets -->
-                    <div class="form-group" formArrayName = "assets">
-                        <p>Asset Type</p>
-                        <input type="text" class="form-control assets" #assettype style="margin-bottom: 10px;">
+                    <div class="form-group" formArrayName = "assets" style="display: flex;">
+                        <div style="width: 45%;">
+
+                            <p>Asset Type</p>
+                            <!-- <mat-form-field>
+                                <mat-label>Asset Type</mat-label>
+                                <select matNativeControl id = "selected">
+                                  <option *ngFor = "let asset of assetItems">{{asset}}</option>
+                                </select>
+                              </mat-form-field> -->
+
+
+                       
+                        <select id = "selected">
+                            <option *ngFor = "let asset of assetItems">
+                                {{asset}}
+                            </option>
+                        </select>
+                        </div>
+                        <div style="width: 45%;">
                         <p>Asset Id</p>
                         <input type="text" class="form-control assets" #assetid style="margin-bottom: 10px;">
-                        
-                        <button (click)="addAssets(assettype, assetid)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;">Add</button>
+                        </div>
+                        <button (click)="addAssets(assetid)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;" id = "assetBtn" [disabled] = "assetData">Add</button>
                     </div>
 
                     <!-- Teamlead -->

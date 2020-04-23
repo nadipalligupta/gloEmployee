@@ -9,7 +9,7 @@
 <button mat-raised-button color="primary" style="margin-left: 20px;" (click) = "addEmp($event)"><b>+</b> Employee</button>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;">
+  <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;" (scroll)="onTableScroll($event)">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
