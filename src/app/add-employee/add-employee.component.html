@@ -78,6 +78,199 @@
               <mat-chip *ngFor="let project of addEmpForm.value.projects" [selectable]="selectable"[removable]="removable" (removed)="removeProject(project)">{{project}}
                 <mat-icon matChipRemove *ngIf="removable" class="removechip">cancel</mat-icon>
               </mat-chip>
+<!-- adding employee -->
+<div class="jumbotron">
+    <div class="container">
+            
+            <div class="col-md-12">
+                <h2 style="text-align: center;"><b>Add Employee Details</b></h2>
+                <form [formGroup]="addEmpForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+
+                    <div class="col-md-5">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" formControlName="firstName" class="form-control"/>
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        </div>
+                    </div>
+
+                    <!-- ID Number -->
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" formControlName="id" class="form-control"/>
+                    </div>
+
+                    <!-- Emails -->
+                    <div class="form-group" formGroupName="mail">
+                        <label>Google Mail</label>
+                        <input type="text" formControlName="googlemail" class="form-control" ><br>
+                        <label>GL Mail</label>
+                        <input type="text" formControlName="glmail" class="form-control" >                        
+                    </div>
+
+                    <!-- ldap-->
+                    <div class="form-group">
+                        <label>LDAP</label>
+                        <input type="text" formControlName="ldap" class="form-control"/>
+                    </div>
+
+                    <!-- seat no-->
+                    <div class="form-group">
+                        <label>Seat Number</label>
+                        <input type="text" formControlName="seatno" class="form-control"/>
+                    </div>
+
+                    <!-- Assets -->
+                    <div class="form-group" formArrayName = "assets" style="display: flex;">
+                        <div style="width: 45%;">
+                        <p>Asset Type</p>
+                        <select id = "selected">
+                            <option *ngFor = "let asset of assetItems">
+                                {{asset}}
+                            </option>
+                        </select>
+                        </div>
+                        <div style="width: 45%;">
+                        <p>Asset Id</p>
+                        <input type="text" class="form-control assets" #assetid style="margin-bottom: 10px;">
+                        </div>
+                        <button (click)="addAssets(assetid)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;" id = "assetBtn" [disabled] = "assetData">Add</button>
+                    </div>
+
+                    <!-- Teamlead -->
+                    <div class="form-group">
+                        <label>Team Lead</label>
+                        <input type="text" formControlName="teamlead" class="form-control"/>
+                    </div>
+
+                    <!-- Managers -->
+                    <div class="form-group" formGroupName="managers">
+                        <label>Manager</label>
+                        <input type="text" formControlName="manager" class="form-control" ><br>
+                        <label>Director</label>
+                        <input type="text" formControlName="director" class="form-control" >                        
+                    </div>
+
+                    <!-- vendi card -->
+                    <div class="form-group">
+                        <label>Vendiman Card</label>
+                        <input type="text" formControlName="vendi" class="form-control"/>
+                    </div>
+
+                    <!-- contact number -->
+                    <div class="form-group" formGroupName="contactinfo">
+                        <label>Contact No.</label>
+                        <input type="text" formControlName="phone" class="form-control" ><br>
+                        <label>Emergency Contact No.</label>
+                        <input type="text" formControlName="emergencyphone" class="form-control" >   
+                    </div>
+
+                    <!-- blood group -->
+                    <div class="form-group">
+                    <label>Blood Group</label>    
+                    <select class="custom-select" (changeBlood)="changeBlood($event)" formControlName="bloodgroup">
+                        <option *ngFor="let blood of bloods" [ngValue]="blood">{{blood}}</option>
+                     </select>
+                    </div> 
+                </div>
+
+                    <!------------------------------Second Half------------------------------------->
+
+
+                <div class="col-md-5 offset-md-2" >
+                    <!-- projects handling -->
+                    <div class="form-group">
+                        <p>Projects</p>
+                        <input type="text" class="form-control arrayelem" #project style="margin-bottom: 10px;">
+                        <button (click)="addProject($event, project)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;">Add</button>
+
+                        <mat-chip *ngFor="let project of addEmpForm.value.projects" [selectable]="selectable"[removable]="removable" (removed)="removeProject(project)">{{project}}
+                        <mat-icon matChipRemove *ngIf="removable" class="removechip">cancel</mat-icon>
+                        </mat-chip>
+                    </div>
+
+
+                    <!-- skillset -->
+                    <div class="form-group">
+                        <p>Skill Set</p>
+                        <input type="text" class="form-control arrayelem" #skill style="margin-bottom: 10px;">
+                        <button (click)="addSkill($event, skill)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;">Add</button>
+                        <span *ngFor="let skill of addEmpForm.value.skillset">
+                        <mat-chip *ngIf = 'skill != ""' [selectable]="selectable"[removable]="removable" (removed)="removeSkill(skill)">{{skill}}
+                        <mat-icon matChipRemove *ngIf="removable" class="removechip">cancel</mat-icon>
+                         </mat-chip>
+                        </span>
+                    </div>
+
+
+
+                    <!-- Address -->
+                    <div class="form-group" formGroupName="contactinfo">
+                        <span formGroupName="address">
+                            <div style="margin-top: 30px;text-align: center;">
+                        <input type="checkbox" data-md-icheck (change)="changeAddress($event)"/> <span class="disableAddr">Residential & Permanent Address are different</span>
+                    </div>  
+
+                            <!-- Residential Address -->
+                        <p style="text-align: center;margin-top: 15px;"><b>Residential Address</b></p>
+                         <div class="row" formGroupName="residential">
+                            <div class="col-md-6">
+                                <label>Address Line - 1</label>
+                                <input type="text" formControlName="addressline1" class="form-control" ><br>
+                                <label>Address Line - 2</label>
+                                <input type="text" formControlName="addressline2" class="form-control"><br>
+                                <label>City</label>
+                                <input type="text" formControlName="city" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Zip-Code</label>
+                                <input type="text" formControlName="zipcode" class="form-control" ><br>
+                                <label>District</label>
+                                <input type="text" formControlName="district" class="form-control"><br>
+                                <label>State</label>
+                                <input type="text" formControlName="state" class="form-control">
+                            </div>
+                            <div class="countrymeasur">
+                                <label>Country</label>
+                                <input type="text" formControlName="country" class="form-control">
+                            </div>
+                         </div>   
+
+                             <!-- Permanent Address -->
+                        <span *ngIf = "addressChange">     
+                        <p style="text-align: center;margin-top: 25px;"><b>Permanent Address</b></p>
+                        <div class="row" formGroupName="permanent">
+                           <div class="col-md-6">
+                               <label>Address Line - 1</label>
+                               <input type="text" formControlName="addressline1" class="form-control" ><br>
+                               <label>Address Line - 2</label>
+                               <input type="text" formControlName="addressline2" class="form-control"><br>
+                               <label>City</label>
+                               <input type="text" formControlName="city" class="form-control">
+                           </div>
+                           <div class="col-md-6">
+                               <label>Zip-Code</label>
+                               <input type="text" formControlName="zipcode" class="form-control" ><br>
+                               <label>District</label>
+                               <input type="text" formControlName="district" class="form-control"><br>
+                               <label>State</label>
+                               <input type="text" formControlName="state" class="form-control">
+                           </div>
+                           <div class="countrymeasur">
+                               <label>Country</label>
+                               <input type="text" formControlName="country" class="form-control">
+                           </div>
+                        </div>  
+                        </span>
+                        </span>
+                    </div>
+                     
+                </div>
+            
+            <div class="form-group" style="margin: auto;">
+                <button mat-raised-button color="primary" >Submit</button>
             </div>
             <!-- skillset -->
             <div class="form-group">

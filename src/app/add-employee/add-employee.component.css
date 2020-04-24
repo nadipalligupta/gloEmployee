@@ -30,12 +30,29 @@
 .disableAddr{
     margin-left: 10px;
 }
+/*<<<<<<< HEAD*/
 
-.dialogdata{
-  max-height: 550px;
-  max-width: 650px;
-}
+/*.dialogdata{*/
+  /*max-height: 550px;*/
+  /*max-width: 650px;*/
+/*}*/
 
-mat-form-field {
-  padding-right: 15px;
+/*mat-form-field {*/
+  /*padding-right: 15px;*/
+/*}*/
+/*=======*/
+
+#selected{
+    width: 90%;
+    border-radius: 4px;
+    height: 38px;
+    border: 1px solid rgb(212, 212, 212);
+    padding-left: 6px;
 }
+#assetBtn{
+    margin-top: 30px;
+    margin-left: 1%;
+    margin-right: 0px !important;
+    margin-bottom: 0px;;
+}
+                     

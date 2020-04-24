@@ -9,7 +9,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;">
+  <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;" (scroll)="onTableScroll($event)">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
