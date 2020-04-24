@@ -10,12 +10,12 @@ export class AuthserviceService {
     // ...
   public isAuthenticated(): boolean {
    const token = localStorage.getItem('token')
-    return token?true:false;
+    return token=='true'?true:false;
   }
 
   LogIn(){
     this.isLoggedIn = !this.isLoggedIn
-    localStorage.setItem('token',true);
+    localStorage.setItem('token','true');
   }
 
    LogOut(){
