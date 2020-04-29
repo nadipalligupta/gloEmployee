@@ -1,137 +1,92 @@
-mat-card{
-    border: 1px solid #000;
+.mdl-card{
+    min-height: 50px;
 }
 .inpmar{
     margin-bottom: 6px;
 }
 #contact{
-    position: relative;
     font-weight: bold;
     margin-top: 35px;
     border-radius: 3px;
-    height: 116px;
 }
 #contact img{
-    position: absolute;
-    left: 0px;
-    right: 0px;
+    display: block;
     margin: auto;
-    width: 13%;
+    width: 40%;
     border-radius: 100%;
-    padding: 2px;
-    border: 2px solid #000;
-    top: -33px;
     background-color: #fff;
+    margin-top:10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px 5px #888;
 }
 #contact p a:hover{
     text-decoration: none;
 }
-.conInp{
-    display: none;
+#contact p{
+    font-weight: bold;
 }
-.contactedit{
-    position: absolute;
-    bottom: 1px;
-    right: 0px;
-    visibility: hidden;
-    
-}
-#contact:hover .contactedit{
-    visibility: visible;
-}
-.edit{
-    position: absolute;
-    cursor: pointer;
-    padding-top: 2px;
-    color: rgb(105, 100, 99);
-}
-.address{
-    margin-top: 25px;
-    position: relative;
-}
-.address .img1{
-    position: absolute;
-    top: 78%;
-    left: 90%;
-    width: 6%;
-}
-.address .img2{
-    position: absolute;
-    top: 78%;
-    right: 4%;
-    width: 6%;
-}
-#perm{
-    width: 45%;
-    float: left;
-    position: relative;
-    height: 290px;
-}
-#resd{
-    width:45%;
-    position: relative;
-    height: 290px;
-    float: right;
-}
-.resdedit, .permedit{
-    right:2px;
-    top:0px;
-    visibility: hidden;
-}
-#perm:hover .permedit{
-    visibility: visible;
-}
-#resd:hover .resdedit{
-    visibility: visible;
-}
-button{
-    margin-top: 15px;
-    margin-left: 47.5%;
-}
+
 #tech{
-    margin-top: 50px;
-    margin-bottom: 35px;
     position: relative;
     display: flex;
-}
-
-#projects{
-    width: 50%;
-    border-right: 1px solid #000;
-
-}
-#skillset{
-    width: 50%;
-    padding-left: 20px;
-
-}
-.skilladd{
-    top: 7%;
-    right: 1%;
-    visibility: hidden;
-}
-#skillset:hover .skilladd{
-    visibility: visible;
-}
-.proedit{
-    top:7%;
-    left:48%;
-    visibility: hidden;
-}
-#projects:hover .proedit{
-    visibility: visible;
+    height: 100px;
+    padding-top: 23px;
 }
 #tech .img1{
     width: 37px;
     position: absolute;
-    left: 45.5%;
+    left: 44%;
     bottom: 16px;
     visibility: visible;
 }
 #tech .img2{
     width: 37px;
     position: absolute;
-    right: 1%;
+    right: 2%;
     bottom: 15px;
     visibility: visible;
+}
+
+#projects{
+    border-right: 1px solid #000;
+}
+
+.skilladd{
+    top: 7%;
+    right: 1%;
+    visibility: hidden;
+}
+
+
+
+.card_pad_left{
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+#perm{
+    border-right: 1px solid #000;
+}
+.address{
+    margin-top: 25px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.address .img1{
+    position: absolute;
+    bottom: 16px;
+    left: 44%;
+    width: 4%;
+}
+.address .img2{
+    position: absolute;
+    bottom: 16px;
+    right: 2%;
+    width: 4%;
+}
+.card_margin_top{
+    margin-top: 30px;
+}
+button{
+    margin-top: 15px;
+    margin-left: 46.5%;
 }

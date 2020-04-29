@@ -1,61 +1,74 @@
-<div style="background-color: whitesmoke;padding: 10px;">
-  
-<mat-card id="contact">
-    <div style="width: 50%;float:right;text-align: right;">
-        <p>LDAP: {{userData.ldap}}</p>
-        <p>Google Mail: <a href="#">{{userData.mail.gemail}}</a></p>
-        <p>Asset id's: <span *ngFor = "let asset of userData.assets">{{asset.desktop1}} {{asset.desktop2}} {{asset.laptop}}</span></p>
-    </div>
-    <div style="width: 50%;">
-        <p>Phone: {{userData.contactinfo.phone}}</p>
-        <p>Glo Mail: <a href="#">{{userData.mail.gloemail}}</a></p>
-        <p>Seat No: {{userData.seatno}}</p>
-    </div>
-    <img src="../../assets/images/gupta.jpg">
-</mat-card>
+<div style="background-color: whitesmoke">
+        
+        <div class="mdl-card mdl-cell mdl-cell--12-col  mdl-shadow--3dp" id="contact">
+            <div class="row">
+                <div class="mdl-cell--4-col card_pad_left" style="padding-top: 50px;">
+                    <p>LDAP : {{userData.ldap}}</p>
+                    <p>Google Mail : <a href="#">{{userData.mail.gemail}}</a></p>
+                    <p>Asset id's : <span *ngFor = "let asset of userData.assets">{{asset.desktop1}} {{asset.desktop2}} {{asset.laptop}}</span></p>
+                </div>
+                <div class="mdl-cell--4-col">
+                    <img src="../../assets/images/gupta.jpg">
+                </div>
+                <div class="mdl-cell--4-col card_pad_left" style="text-align: right;padding-top: 50px;">
+                    <p>Phone : {{userData.contactinfo.phone}}</p>
+                    <p>Glo Mail : <a href="#">{{userData.mail.gloemail}}</a></p>
+                    <p>Seat No : {{userData.seatno}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-card mdl-cell mdl-cell--12-col  mdl-shadow--3dp card_margin_top" id="tech">
+            <div class="row">
+                <div class="mdl-cell--6-col card_pad_left">
+                    <div id="projects">
+                        <p><b>Projects: </b></p>
+                        <span *ngFor = "let project of userData.projects; let isLast=last">{{project}}{{isLast ? '' : ', '}}</span>
+                        <img class = "img1" src="../../assets/images/tech.png">
+                    </div>
+                </div>
+                <div class="mdl-cell--6-col">
+                    <div id="skillset" class="card_pad_left">
+                        <p><b>Skill-set: </b></p>
+                        <span *ngFor = "let skill of userData.skillset; let isLast=last">{{skill}}{{isLast ? '' : ', '}}</span>
+                        <img class = "img2"  src="../../assets/images/tech.png">
+                    </div>
+                </div>
+            </div>    
+        </div>    
 
-
-<mat-card id = "tech">
-    <div id="projects">
-        <p><b>Projects: </b></p>
-        <span *ngFor = "let project of userData.projects; let isLast=last">{{project}}{{isLast ? '' : ', '}}</span>
-        <img class = "img1" src="../../assets/images/tech.png">
-    </div>
-    <div id="skillset">
-        <p><b>Skill-set: </b></p>
-        <span *ngFor = "let skill of userData.skillset; let isLast=last">{{skill}}{{isLast ? '' : ', '}}</span>
-        <img class = "img2"  src="../../assets/images/tech.png">
-    </div>
-</mat-card>
-
-<div class = "address">
-    <mat-card id = 'perm'>
-        <p><b><u>Permanent :</u></b></p>
-        <p >Door No: {{userData.contactinfo.address.residential.houseno}}</p>
-        <p >Landmark: {{userData.contactinfo.address.permanent.landmark}}</p>
-        <p >Street: {{userData.contactinfo.address.permanent.area}}</p>
-        <p >Pin-Code: {{userData.contactinfo.address.permanent.pin}}</p>
-        <p >City: {{userData.contactinfo.address.permanent.location}}</p>
-        <p >Zilla: {{userData.contactinfo.address.permanent.zilla}}</p>
-        <p >State: {{userData.contactinfo.address.permanent.state}}</p>
-        <img class = "img1" src="../../assets/images/map.png">
-    </mat-card>
-
-    <mat-card id = 'resd'>
-        <p><b><u>Residentail:</u></b></p>
-        <p >Door No: {{userData.contactinfo.address.residential.houseno}}</p>
-        <p >Landmark: {{userData.contactinfo.address.residential.landmark}}</p>
-        <p >Street: {{userData.contactinfo.address.residential.area}}</p>
-        <p >Pin-Code: {{userData.contactinfo.address.residential.pin}}</p>
-        <p >City: {{userData.contactinfo.address.residential.location}}</p>
-        <p >Zilla: {{userData.contactinfo.address.residential.zilla}}</p>
-        <p >State: {{userData.contactinfo.address.residential.state}}</p>
-        <img class = "img2" src="../../assets/images/map.png">
-
-    </mat-card>
+    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--3dp card_margin_top">
+        <div class="row address">
+            <div class="mdl-cell--6-col card_pad_left">
+                <div id="perm">
+                    <p><b>Permanent :</b></p>
+                    <p >Door No: {{userData.contactinfo.address.residential.houseno}}</p>
+                    <p >Landmark: {{userData.contactinfo.address.permanent.landmark}}</p>
+                    <p >Street: {{userData.contactinfo.address.permanent.area}}</p>
+                    <p >Pin-Code: {{userData.contactinfo.address.permanent.pin}}</p>
+                    <p >City: {{userData.contactinfo.address.permanent.location}}</p>
+                    <p >District: {{userData.contactinfo.address.permanent.zilla}}</p>
+                    <p >State: {{userData.contactinfo.address.permanent.state}}</p>
+                    <img class = "img1" src="../../assets/images/map.png">
+                </div>
+            </div>
+            <div class="mdl-cell--6-col">
+                <div id="resd" class="card_pad_left">
+                    <p><b>Residentail:</b></p>
+                    <p >Door No: {{userData.contactinfo.address.residential.houseno}}</p>
+                    <p >Landmark: {{userData.contactinfo.address.residential.landmark}}</p>
+                    <p >Street: {{userData.contactinfo.address.residential.area}}</p>
+                    <p >Pin-Code: {{userData.contactinfo.address.residential.pin}}</p>
+                    <p >City: {{userData.contactinfo.address.residential.location}}</p>
+                    <p >District: {{userData.contactinfo.address.residential.zilla}}</p>
+                    <p >State: {{userData.contactinfo.address.residential.state}}</p>
+                    <img class = "img2" src="../../assets/images/map.png">
+                </div>
+            </div>
+        </div>
+    </div> 
     
-</div>
-<button mat-raised-button color="primary" (click) = "editData">Edit</button>
-
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click) = "editData">
+        Edit
+    </button>
 </div>
 

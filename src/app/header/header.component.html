@@ -1,4 +1,18 @@
-<div class="header">
-	<span>GLO - EMPLOYEE DETAILS</span>
-    <button mat-button color="primary" (click)="Logout()">Logout</button>
-</div>
+<header class="mdl-layout__header header">
+    <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title">GLO - Employee Details</span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation. We hide it in small screens. -->
+    <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <!-- Accent-colored raised button with ripple -->
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="Logout()">
+        Logout
+    </button>
+
+    </nav>
+    </div>
+</header>
+  
+

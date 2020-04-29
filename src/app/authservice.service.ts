@@ -22,6 +22,4 @@ export class AuthserviceService {
     this.isLoggedIn = !this.isLoggedIn
     localStorage.removeItem('token');
   }
-
-
 }

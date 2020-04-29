@@ -9,25 +9,34 @@ table {
   width: 100%;
 }
 
-.fab-icon {
-  bottom: 50px;
-  right: 50px;
-  position: fixed;
-}
 
 td, th {
-  width: 25%;
+  width: 17.6%;
+  padding-right: 5px !important;
+  box-sizing: border-box;
 }
 .mat-row:hover {
   background-color: rgba(232, 230, 225, 0.9);
 }
 .example-form-field{
   width:50%;
-  margin-top: 15px;
+  margin-top: 65px;
   margin-left: 15px;
 }
-.delete{
+.mdl-textfield__label:after{
+  border-bottom: 0px;
+  padding-top: 10px;
+}
+.mdl-textfield__label:after{
+  background-color: transparent;
+}
+.mdl-textfield{
+  width:100%;
+}
+.cancelIcon{
   cursor: pointer;
+  margin-left: -24px;
+  color: darkgray;
 }
 
 #example-card {
@@ -130,6 +139,12 @@ td, th {
 	border-right-color: #000;
   border-width: 10px;
   margin-top: -4px;
+}
+.addemp{
+  position: absolute;
+  right:50px;
+  bottom:10px;
+  position: fixed;
 }
 
 

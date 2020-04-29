@@ -48,7 +48,7 @@ export class AllEmployeeComponent implements OnInit {
     //this._router.navigate(['/addEmployee']);
       const dialogRef = this.dialog.open(AddEmployeeComponent);
       dialogRef.afterClosed().subscribe(data => {
-        if( data){
+        if(data){
           this.isDataLoading = true;
           this.empServ.createEmployee(data).subscribe(data => this.getEmployees());
         }

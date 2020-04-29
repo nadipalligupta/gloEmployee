@@ -12,42 +12,33 @@ font-family: 'Numans', sans-serif;
 height: 100%;
 align-content: center;
 }
+.mdl-card__title{
+    padding-bottom: 0px;
+}
+.mdl-card__title img{
+    display: block;
+    margin: auto;
+}
 
 .card{
-height: 290px;
+position: absolute;
+left: 0px;
+right: 0px;
+margin: auto;
+top: 0px;
+bottom: 0px;
+height: 370px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.9) !important;
+
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
+.card-body{
+    padding-top:4px;
 }
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
-
-.card-header h3{
-color: white;
-}
-
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
-}
-
-.input-group-prepend span{
-width: 50px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
-}
 
 input:focus{
 outline: 0 0 0 0  !important;
@@ -55,37 +46,43 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
-.remember{
-color: white;
+.mdl-textfield__label{
+    color: #fff;
 }
 
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
+.mdl-card__supporting-text {
+    padding: 0px;
+    width: 100%;
+}
+.mdl-textfield{
+    width: 98%;
+}
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
+    color: rgb(63,81,181)
+}
+.mdl-textfield__input{
+    color:#fff;
+    border-bottom: 1px solid #fff;
+}
+.mdl-textfield__label:after{
+    border-bottom: 0px;
+}
+.mdl-textfield__label:after{
+    background-color: transparent;
+}
+.icon_style{
+    color: rgb(63,81,181);
+    margin-left: -24px;
+}
+.mdl-radio__outer-circle{
+    border: 2px solid #fff !important;
 }
 
-.login_btn{
-color: black;
-background-color: #FFC312;
-width: 100px;
+.forgotpass{
+    text-align: center;
+}
+.forgotpass a{
+    text-transform: none;
 }
 
-.login_btn:hover{
-color: black;
-background-color: white;
-}
 
-.links{
-color: white;
-}
-
-.links a{
-margin-left: 4px;
-}
-#title{
-    margin-bottom: -10px;
-    color: white;
-}

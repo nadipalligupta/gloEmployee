@@ -1,16 +1,32 @@
 <app-header></app-header>
 <div style="background-color: whitesmoke;height: 100%;">
-<mat-form-field class="example-form-field">
+<!-- <mat-form-field class="example-form-field">
   <mat-label>Search</mat-label>
   <input matInput type="text" [(ngModel)]="value" (keyup) = "search(element)" #element>
   <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="closeData()">
     <mat-icon>close</mat-icon>
   </button>
-</mat-form-field>
+</mat-form-field> -->
+
+<!-- Textfield with Floating Label -->
+<form class="example-form-field">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" [(ngModel)]="value" name="something" (keyup) = "search(element)" #element style="width: 96%;display: inline-block;">
+      <span class="material-icons cancelIcon" *ngIf="value" (click)="closeData()">
+        cancel
+      </span>
+
+    
+    <!-- <button mat-button *ngIf="textvalue" matSuffix mat-icon-button aria-label="Clear" (click)="closeData()">
+      <mat-icon>close</mat-icon>
+    </button> -->
+    <label class="mdl-textfield__label" for="sample3">Search</label>
+  </div>
+</form>
+
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort style="cursor: pointer;" (scroll)="onTableScroll($event)">
-
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
@@ -70,13 +86,17 @@
     <!-- Skillset Column -->
     <ng-container matColumnDef="skillset">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Skillset </th>
-      <td mat-cell *matCellDef="let row"> {{row.skillset}} </td>
+      <td mat-cell *matCellDef="let row"> 
+      <span *ngFor = "let skill of row.skillset; let isLast=last">{{skill}}{{isLast ? '' : ', '}}</span>
+      </td>
     </ng-container>
 
     <!-- Projects Column -->
     <ng-container matColumnDef="projects">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Projects </th>
-      <td mat-cell *matCellDef="let row">{{row.projects}}</td>
+      <td mat-cell *matCellDef="let row">
+      <span *ngFor = "let project of row.projects; let isLast=last">{{project}}{{isLast ? '' : ', '}}</span>
+      </td>
     </ng-container>
 
     <!-- Projects Column -->
@@ -92,7 +112,11 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
 </div>
-<button mat-fab color="primary" class="fab-icon" (click)="addEmp()">+</button>
+
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored addemp" (click)="addEmp()">
+  <i class="material-icons">add</i>
+</button>
+<!-- <button mat-fab color="primary" class="fab-icon" (click)="addEmp()">+</button> -->
 
 
 
