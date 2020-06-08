@@ -15,7 +15,7 @@ assetArray:any;
 
   ngOnInit(): void {
     let id = this.actRoute.snapshot.params['id'];
-    this.empServ.getData().subscribe((res)=>{
+    this.empServ.getEmpData().subscribe((res)=>{
       res.forEach(ele=>{
         if(ele.id == id){
           this.userData = ele;

@@ -11,9 +11,7 @@
                   <!-- Full Name -->
                   <div class="form-group">
                       <label>Full Name</label>
-                      <input type="text" formControlName="firstName" class="form-control"/>
-                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                      </div>
+                      <input type="text" formControlName="fullname" class="form-control"/>
                   </div>
 
                   <!-- ID Number -->
@@ -25,9 +23,9 @@
                   <!-- Emails -->
                   <div class="form-group" formGroupName="mail">
                       <label>Google Mail</label>
-                      <input type="text" formControlName="googlemail" class="form-control" ><br>
+                      <input type="text" formControlName="googlmail" class="form-control" ><br>
                       <label>GL Mail</label>
-                      <input type="text" formControlName="glmail" class="form-control" >                        
+                      <input type="text" formControlName="glomail" class="form-control" >                        
                   </div>
 
                   <!-- ldap-->
@@ -54,7 +52,7 @@
                       </div>
                       <div style="width: 45%;">
                       <p>Asset Id</p>
-                      <input type="text" class="form-control assets" #assetid style="margin-bottom: 10px;">
+                      <input type="text" class="form-control assets" #assetid style="height:38px">
                       </div>
                       <button (click)="addAssets(assetid)" mat-mini-fab color="primary" style="margin-right: 10px; margin-bottom: 10px;" id = "assetBtn" [disabled] = "assetData">Add</button>
                   </div>

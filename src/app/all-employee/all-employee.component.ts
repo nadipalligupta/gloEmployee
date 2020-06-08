@@ -37,8 +37,9 @@ export class AllEmployeeComponent implements OnInit {
   }
 
   getEmployees(){
-    this.empServ.getData().subscribe(res => {
+    this.empServ.getAllEmpData().subscribe(res => {
       this.users = res;
+      console.log(this.users);
       this.dataSource = new MatTableDataSource(this.users);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -72,13 +73,17 @@ if(asset.laptop && asset.desktop1 && asset.desktop2)
   }
   removeEle(eve:Event,delEle) {
     eve.stopPropagation();
-    this.users = this.users.filter(function(ele){
-          return (delEle.id != ele.id)
-    })
+    this.empServ.deleteEmployee(delEle.empID);
+    // this.users = this.users.filter(function(ele){
+    //       return (delEle.id != ele.id)
+    // })
     this.dataSource  = this.users;
   }
   empData(empId){
-    this._router.navigate(['/employee', empId]);
+
+    console.log(empId)
+   // this._router.navigate(['/employee', empId]);
+    
   }
   closeData(){
     this.value = '';

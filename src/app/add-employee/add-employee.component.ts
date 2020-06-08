@@ -1,6 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
+import {EmployeeDataService} from '../../app/employee-data.service';
 import {
   MatDialog,
   MatDialogRef,
@@ -25,12 +26,12 @@ export class AddEmployeeComponent implements OnInit {
     assetItems:any = ['Laptop', 'Desktop1', 'Desktop2'];
     bloods: any = ["A+", "B+", "O+", "AB+","A-", "B-", "O-", "AB-", "others"]
 
-    constructor(private formBuilder: FormBuilder,  private _router: Router, public dialogRef: MatDialogRef<AddEmployeeComponent>,
+    constructor(private formBuilder: FormBuilder,private empServ: EmployeeDataService, private _router: Router, public dialogRef: MatDialogRef<AddEmployeeComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: any,) { }
 
     ngOnInit() {
         this.addEmpForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
+            fullname: ['', Validators.required],
             id: ['', Validators.required],
             ldap: ['', Validators.required],
             seatno: ['', Validators.required],
@@ -45,8 +46,8 @@ export class AddEmployeeComponent implements OnInit {
               director: ['', Validators.required]
             }),
             mail: this.formBuilder.group({
-              googlemail: ['', Validators.required],
-              glmail: ['', Validators.required]
+              googlmail: ['', Validators.required],
+              glomail: ['', Validators.required]
             }),
             contactinfo: this.formBuilder.group({
               phone: ['', Validators.required],
@@ -132,22 +133,23 @@ export class AddEmployeeComponent implements OnInit {
     addProject(event, project) {
       event.stopPropagation();
       event.preventDefault();
-      if(project['value'] !==  " "){
       this.project = this.addEmpForm.controls.projects as FormArray;
-      this.project.push(new FormControl(project['value']));
-      console.log(this.project.value);
+      if(project['value'] !==  " "){
+      this.project.push(new FormControl(project['value']));  
       }
+      console.log(this.project.value);
       project['value'] = " ";
     }
 
     //remove previous project
     removeProject(project): void {
       const index = this.addEmpForm.value.projects.indexOf(project);
-  
+      console.log(index); 
       if (index >= 0) {
         this.addEmpForm.value.projects.splice(index, 1);
-        
+        //this.project.value.splice(index,1);
       }
+      console.log(this.project.value);
     }
 
     // Blood Group
@@ -173,7 +175,7 @@ export class AddEmployeeComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
+        this.empServ.createEmployee(JSON.stringify(this.addEmpForm.value));
         // stop here if form is invalid
         if (this.addEmpForm.invalid) {
 
